@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>لوکسورا — همه محصولات</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style2.css" />
+  <script src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+<!-- DRAWER OVERLAY -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<!-- MOBILE DRAWER -->
+<aside class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-header">
+    <a class="logo" href="#">لوکسو<span>را</span></a>
+    <button class="drawer-close" id="drawerClose" aria-label="بستن منو">
+      <i class="bi bi-x-lg"></i>
+    </button>
+  </div>
+
+  <div class="drawer-search">
+    <i class="bi bi-search"></i>
+    <input type="search" placeholder="جستجوی محصول ..." />
+  </div>
+
+  <nav class="drawer-nav">
+    <ul>
+      <li><a href="index.html">خانه <i class="bi bi-star-fill"></i></a></li>
+      <li><a href="index2.html">محصولات <i class="bi bi-star-fill"></i></a></li>
+      <li class="has-sub">
+        <a href="#" class="drawer-has-sub">
+          دسته‌بندی‌ها
+          <i class="bi bi-chevron-left toggle-icon"></i>
+        </a>
+        <ul class="drawer-sub">
+          <li><a href="#">لباس</a></li>
+          <li><a href="#">ادکلن</a></li>
+          <li><a href="#">ساعت</a></li>
+          <li><a href="#">اکسسوری</a></li>
+          <li><a href="#">لباس بچه‌گانه</a></li>
+          <li><a href="#">پر فروش‌ها</a></li>
+        </ul>
+      </li>
+      <li><a href="#">تخفیف‌ها</a></li>
+      <li><a href="#">تماس</a></li>
+    </ul>
+  </nav>
+
+  <div class="drawer-actions">
+    <button class="favorite">مورد علاقه‌ها <i class="bi bi-heart"></i></button>
+    <button class="cart-btn">سبد خرید <i class="bi bi-cart"></i></button>
+  </div>
+</aside>
+
+<!-- NAV -->
+<nav>
+  <button class="hamburger" id="hamburgerBtn" aria-label="باز کردن منو">
+    <i class="bi bi-list"></i>
+  </button>
+
+  <a class="logo" href="#">لوکسو<span>را</span></a>
+
+  <ul class="nav-links">
+    <li><a href="index.html">خانه <i class="bi bi-star-fill"></i></a></li>
+    <li><a href="index2.html">محصولات <i class="bi bi-star-fill"></i></a></li>
+    <li class="has-sub">
+      <a href="#">دسته‌بندی‌ها</a>
+      <ul class="slide-down">
+        <li><a href="#">لباس</a></li>
+        <li><a href="#">ادکلن</a></li>
+        <li><a href="#">ساعت</a></li>
+        <li><a href="#">اکسسوری</a></li>
+        <li><a href="#">لباس بچه‌گانه</a></li>
+        <li><a href="#">پر فروش‌ها</a></li>
+      </ul>
+    </li>
+    <li><a href="#">تخفیف‌ها</a></li>
+    <li><a href="#">تماس</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <div class="search-wrap">
+      <input type="search" placeholder="جستجوی محصول ..." class="search" />
+      <i class="bi bi-search"></i>
+    </div>
+    <button class="favorite">مورد علاقه‌ها <i class="bi bi-heart"></i></button>
+    <button class="cart-btn">سبد خرید <i class="bi bi-cart"></i></button>
+  </div>
+</nav>
+
+<!-- STRIP -->
+<div class="strip strip-gold">
+  <div><strong><i class="bi bi-truck"></i> ارسال رایگان</strong> <span>بالای ۵۰۰ هزار</span></div>
+  <div><strong><i class="bi bi-arrow-counterclockwise"></i> بازگشت آسان</strong> <span>۷ روز ضمانت</span></div>
+  <div><strong><i class="bi bi-lock"></i> پرداخت امن</strong> <span>درگاه‌های معتبر</span></div>
+  <div><strong><i class="bi bi-telephone"></i> پشتیبانی ۲۴/۷</strong></div>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div>
+    <div class="breadcrumb">
+      <a href="index.html">خانه</a>
+      <i class="bi bi-chevron-left"></i>
+      <span>محصولات</span>
+    </div>
+    <h1>همه <em>محصولات</em></h1>
+    <p class="page-meta">۶۴۷ محصول در دسترس</p>
+  </div>
+  <div class="header-actions">
+    <select class="sort-select">
+      <option>مرتب‌سازی: پیش‌فرض</option>
+      <option>جدیدترین</option>
+      <option>ارزان‌ترین</option>
+      <option>گران‌ترین</option>
+      <option>پرفروش‌ترین</option>
+    </select>
+    <div class="view-toggle">
+      <button class="active" id="grid-btn" title="نمای گرید"><i class="bi bi-grid-3x3-gap"></i></button>
+      <button id="list-btn" title="نمای لیست"><i class="bi bi-list-ul"></i></button>
+    </div>
+  </div>
+</div>
+
+<!-- SHOP LAYOUT -->
+<div class="shop-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-section">
+      <p class="sidebar-title">دسته‌بندی</p>
+      <ul class="cat-filter-list">
+        <li><a href="#" class="active">همه محصولات <span class="cat-count-badge">647</span></a></li>
+        <li><a href="#">پوشاک زنانه <span class="cat-count-badge">248</span></a></li>
+        <li><a href="#">پوشاک مردانه <span class="cat-count-badge">186</span></a></li>
+        <li><a href="#">لوازم جانبی <span class="cat-count-badge">213</span></a></li>
+        <li><a href="#">کیف و کفش <span class="cat-count-badge">94</span></a></li>
+        <li><a href="#">ساعت <span class="cat-count-badge">58</span></a></li>
+        <li><a href="#">عطر <span class="cat-count-badge">41</span></a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-section">
+      <p class="sidebar-title">محدوده قیمت</p>
+      <div class="price-range-display">
+        <span>از <strong>۰</strong> ت</span>
+        <span>تا <strong>۵,۰۰۰,۰۰۰</strong> ت</span>
+      </div>
+      <input type="range" class="range-slider" min="0" max="5000000" value="5000000" />
+      <div class="price-inputs">
+        <input type="text" class="price-input" placeholder="از (تومان)" value="۰" />
+        <input type="text" class="price-input" placeholder="تا (تومان)" value="۵,۰۰۰,۰۰۰" />
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <p class="sidebar-title">برند</p>
+      <ul class="check-list">
+        <li><label class="check-item"><input type="checkbox" checked /> آرتمیس</label></li>
+        <li><label class="check-item"><input type="checkbox" /> وودلن</label></li>
+        <li><label class="check-item"><input type="checkbox" /> نوردیک</label></li>
+        <li><label class="check-item"><input type="checkbox" /> رولکس</label></li>
+        <li><label class="check-item"><input type="checkbox" /> اکوز</label></li>
+        <li><label class="check-item"><input type="checkbox" /> ولوت</label></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-section">
+      <p class="sidebar-title">رنگ</p>
+      <div class="color-swatches">
+        <div class="swatch active" style="background:#1a1a18" title="مشکی"></div>
+        <div class="swatch" style="background:#fafaf8;border:1px solid #e2e0da" title="سفید"></div>
+        <div class="swatch" style="background:#c9a96e" title="طلایی"></div>
+        <div class="swatch" style="background:#8B4513" title="قهوه‌ای"></div>
+        <div class="swatch" style="background:#2c5f2e" title="سبز"></div>
+        <div class="swatch" style="background:#1a3a5c" title="سرمه‌ای"></div>
+        <div class="swatch" style="background:#c0392b" title="قرمز"></div>
+        <div class="swatch" style="background:#f5f0e8" title="کرم"></div>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <p class="sidebar-title">امتیاز</p>
+      <ul class="rating-list">
+        <li class="rating-item"><span class="rating-stars">★★★★★</span> ۵ ستاره</li>
+        <li class="rating-item"><span class="rating-stars">★★★★☆</span> ۴ ستاره و بالاتر</li>
+        <li class="rating-item"><span class="rating-stars">★★★☆☆</span> ۳ ستاره و بالاتر</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-section">
+      <p class="sidebar-title">وضعیت</p>
+      <ul class="check-list">
+        <li><label class="check-item"><input type="checkbox" /> فقط تخفیف‌دار</label></li>
+        <li><label class="check-item"><input type="checkbox" /> موجود در انبار</label></li>
+        <li><label class="check-item"><input type="checkbox" /> ارسال سریع</label></li>
+      </ul>
+    </div>
+
+    <button class="apply-filters-btn">اعمال فیلترها</button>
+    <button class="clear-filters">پاک کردن فیلترها</button>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+
+    <!-- Mobile filter toggle -->
+    <button class="mobile-filter-btn" id="mobile-filter-toggle">
+      <i class="bi bi-sliders"></i> فیلترها
+    </button>
+
+    <!-- Active filters -->
+    <div class="active-filters-bar">
+      <span class="active-filters-label">فیلترها:</span>
+      <div class="filter-tag">آرتمیس <button onclick="this.parentElement.remove()">×</button></div>
+      <div class="filter-tag">پوشاک <button onclick="this.parentElement.remove()">×</button></div>
+      <div class="filter-tag">مشکی <button onclick="this.parentElement.remove()">×</button></div>
+    </div>
+
+    <!-- Results info -->
+    <div class="results-info">
+      <p class="results-count">نمایش <strong>۱–۱۲</strong> از <strong>۶۴۷</strong> محصول</p>
+      <div class="sort-bar">
+        <span class="sort-label">مرتب‌سازی:</span>
+        <div class="sort-opts">
+          <button class="sort-opt active">پیش‌فرض</button>
+          <button class="sort-opt">جدیدترین</button>
+          <button class="sort-opt">پرفروش</button>
+          <button class="sort-opt">قیمت</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCT GRID -->
+    <div class="product-grid" id="product-grid">
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="IMG/shirt.jpg" alt="پیراهن کتان بهاره" />
+          <span class="product-badge new">جدید</span>
+          <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+          <div class="product-actions">
+            <button class="action-btn">افزودن به سبد</button>
+            <button class="action-btn icon"><i class="bi bi-eye"></i></button>
+          </div>
+        </div>
+        <p class="product-brand">آرتمیس</p>
+        <p class="product-name">پیراهن کتان بهاره</p>
+        <div class="product-price">
+          <span class="price-now">۴۸۰,۰۰۰ ت</span>
+          <span class="price-old">۶۰۰,۰۰۰</span>
+        </div>
+        <div class="stars">★★★★☆ <span>(۱۲۴)</span></div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="IMG/accessories.jpg" alt="گردنبند طلا" />
+          <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+          <div class="product-actions">
+            <button class="action-btn">افزودن به سبد</button>
+            <button class="action-btn icon"><i class="bi bi-eye"></i></button>
+          </div>
+        </div>
+        <p class="product-brand">وودلن</p>
+        <p class="product-name">گردنبند طلا ۱۸ عیار</p>
+        <div class="product-price">
+          <span class="price-now">۱,۲۰۰,۰۰۰ ت</span>
+        </div>
+        <div class="stars">★★★★★ <span>(۸۷)</span></div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="IMG/watch.jpg" alt="ساعت مینیمال" />
+          <span class="product-badge">%۳۰</span>
+          <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+          <div class="product-actions">
+            <button class="action-btn">افزودن به سبد</button>
+            <button class="action-btn icon"><i class="bi bi-eye"></i></button>
+          </div>
+        </div>
+        <p class="product-brand">نوردیک</p>
+        <a href="product.html" style="text-decoration:none;color:inherit">
+          <p class="product-name">ساعت مینیمال اسکاندیناوی <i class="bi bi-star-fill" style="color:var(--gold);font-size:.8rem"></i></p>
+        </a>
+        <div class="product-price">
+          <span class="price-now">۸۴۰,۰۰۰ ت</span>
+          <span class="price-old">۱,۲۰۰,۰۰۰</span>
+        </div>
+        <div class="stars">★★★★☆ <span>(۲۳۱)</span></div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="IMG/pants.jpg" alt="شلوار کتان" />
+          <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+          <div class="product-actions">
+            <button class="action-btn">افزودن به سبد</button>
+            <button class="action-btn icon"><i class="bi bi-eye"></i></button>
+          </div>
+        </div>
+        <p class="product-brand">آرتمیس</p>
+        <p class="product-name">شلوار کتان</p>
+        <div class="product-price">
+          <span class="price-now">۳۶۰,۰۰۰ ت</span>
+        </div>
+        <div class="stars">★★★★★ <span>(۵۶)</span></div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="IMG/glasses.jpg" alt="ساعت کلاسیک" />
+          <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+          <div class="product-actions">
+            <button class="action-btn">افزودن به سبد</button>
+            <button class="action-btn icon"><i class="bi bi-eye"></i></button>
+          </div>
+        </div>
+        <p class="product-brand">رولکس</p>
+        <p class="product-name">ساعت کلاسیک</p>
+        <div class="product-price">
+          <span class="price-now">۳۶۰,۰۰۰ ت</span>
+        </div>
+        <div class="stars">★★★★★ <span>(۵۶)</span></div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="IMG/bag.jpg" alt="کیف چرم دستی" />
+          <span class="product-badge sale">تخفیف</span>
+          <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+          <div class="product-actions">
+            <button class="action-btn">افزودن به سبد</button>
+            <button class="action-btn icon"><i class="bi bi-eye"></i></button>
+          </div>
+        </div>
+        <p class="product-brand">اکوز</p>
+        <p class="product-name">کیف چرم دستی</p>
+        <div class="product-price">
+          <span class="price-now">۲,۱۰۰,۰۰۰ ت</span>
+          <span class="price-old">۲,۸۰۰,۰۰۰</span>
+        </div>
+        <div class="stars">★★★★☆ <span>(۴۳)</span></div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="IMG/perfume.jpg" alt="عطر ولوت نویر" />
+          <span class="product-badge new">جدید</span>
+          <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+          <div class="product-actions">
+            <button class="action-btn">افزودن به سبد</button>
+            <button class="action-btn icon"><i class="bi bi-eye"></i></button>
+          </div>
+        </div>
+        <p class="product-brand">ولوت</p>
+        <p class="product-name">عطر ولوت نویر</p>
+        <div class="product-price">
+          <span class="price-now">۹۵۰,۰۰۰ ت</span>
+        </div>
+        <div class="stars">★★★★★ <span>(۱۸۹)</span></div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="IMG/dors.jpg" alt="بلیزر پشمی زنانه" />
+          <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+          <div class="product-actions">
+            <button class="action-btn">افزودن به سبد</button>
+            <button class="action-btn icon"><i class="bi bi-eye"></i></button>
+          </div>
+        </div>
+        <p class="product-brand">آرتمیس</p>
+        <p class="product-name">بلیزر پشمی زنانه</p>
+        <div class="product-price">
+          <span class="price-now">۱,۸۵۰,۰۰۰ ت</span>
+        </div>
+        <div class="stars">★★★★☆ <span>(۶۷)</span></div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="IMG/shoes.jpg" alt="کفش چرم آکسفورد" />
+          <span class="product-badge">%۲۰</span>
+          <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+          <div class="product-actions">
+            <button class="action-btn">افزودن به سبد</button>
+            <button class="action-btn icon"><i class="bi bi-eye"></i></button>
+          </div>
+        </div>
+        <p class="product-brand">نوردیک</p>
+        <p class="product-name">کفش چرم آکسفورد</p>
+        <div class="product-price">
+          <span class="price-now">۱,۶۰۰,۰۰۰ ت</span>
+          <span class="price-old">۲,۰۰۰,۰۰۰</span>
+        </div>
+        <div class="stars">★★★★★ <span>(۳۴)</span></div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="IMG/accessorie2.jpg" alt="دستبند طلا چرم" />
+          <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+          <div class="product-actions">
+            <button class="action-btn">افزودن به سبد</button>
+            <button class="action-btn icon"><i class="bi bi-eye"></i></button>
+          </div>
+        </div>
+        <p class="product-brand">وودلن</p>
+        <p class="product-name">دستبند طلا چرم</p>
+        <div class="product-price">
+          <span class="price-now">۷۸۰,۰۰۰ ت</span>
+        </div>
+        <div class="stars">★★★★☆ <span>(۱۱۲)</span></div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="IMG/scarf.jpg" alt="شال کشمیر" />
+          <span class="product-badge new">جدید</span>
+          <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+          <div class="product-actions">
+            <button class="action-btn">افزودن به سبد</button>
+            <button class="action-btn icon"><i class="bi bi-eye"></i></button>
+          </div>
+        </div>
+        <p class="product-brand">اکوز</p>
+        <p class="product-name">شال کشمیر</p>
+        <div class="product-price">
+          <span class="price-now">۵۵۰,۰۰۰ ت</span>
+        </div>
+        <div class="stars">★★★★★ <span>(۷۸)</span></div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="IMG/glasses2.jpg" alt="عینک آفتابی کلاسیک" />
+          <span class="product-badge sale">تخفیف</span>
+          <button class="product-wishlist"><i class="bi bi-heart"></i></button>
+          <div class="product-actions">
+            <button class="action-btn">افزودن به سبد</button>
+            <button class="action-btn icon"><i class="bi bi-eye"></i></button>
+          </div>
+        </div>
+        <p class="product-brand">ولوت</p>
+        <p class="product-name">عینک آفتابی کلاسیک</p>
+        <div class="product-price">
+          <span class="price-now">۴۲۰,۰۰۰ ت</span>
+          <span class="price-old">۵۵۰,۰۰۰</span>
+        </div>
+        <div class="stars">★★★★☆ <span>(۲۰۵)</span></div>
+      </div>
+
+    </div>
+    <!-- END PRODUCT GRID -->
+
+    <!-- PAGINATION -->
+    <div class="pagination">
+      <button class="page-btn"><i class="bi bi-chevron-right"></i></button>
+      <button class="page-btn active">۱</button>
+      <button class="page-btn">۲</button>
+      <button class="page-btn">۳</button>
+      <button class="page-btn">۴</button>
+      <span class="page-nav">...</span>
+      <button class="page-btn">۵۴</button>
+      <button class="page-btn"><i class="bi bi-chevron-left"></i></button>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a class="logo" href="#">لوکسو<span>را</span></a>
+      <p class="footer-desc">فروشگاهی برای کسانی که سبک زندگی ممتاز را انتخاب می‌کنند.</p>
+    </div>
+    <div class="footer-col">
+      <h4>فروشگاه</h4>
+      <ul>
+        <li><a href="#">محصولات جدید</a></li>
+        <li><a href="#">پرفروش‌ها</a></li>
+        <li><a href="#">تخفیف‌ها</a></li>
+        <li><a href="#">هدیه دادن</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>راهنما</h4>
+      <ul>
+        <li><a href="#">شیوه سفارش</a></li>
+        <li><a href="#">پیگیری سفارش</a></li>
+        <li><a href="#">بازگشت کالا</a></li>
+        <li><a href="#">سوالات متداول</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>تماس</h4>
+      <ul>
+        <li><a href="#">درباره ما</a></li>
+        <li><a href="#">وبلاگ</a></li>
+        <li><a href="#">همکاری</a></li>
+        <li><a href="#">پشتیبانی</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© ۱۴۰۴ لوکسورا — تمامی حقوق محفوظ است</span>
+    <div class="social-links">
+      <a href="#">اینستاگرام <i class="bi bi-instagram"></i></a>
+      <a href="#">تلگرام <i class="bi bi-telegram"></i></a>
+      <a href="#">واتساپ <i class="bi bi-whatsapp"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script src="index.js"></script>
+<script src="index2.js"></script>
+</body>
+</html>

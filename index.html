@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>لوکسورا — فروشگاه</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+<!-- MOBILE DRAWER OVERLAY -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<!-- MOBILE DRAWER -->
+<aside class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-header">
+    <a class="logo" href="#">لوکسو<span>را</span></a>
+    <button class="drawer-close" id="drawerClose" aria-label="بستن منو">
+      <i class="bi bi-x-lg"></i>
+    </button>
+  </div>
+
+  <div class="drawer-search">
+    <i class="bi bi-search"></i>
+    <input type="search" placeholder="جستجوی محصول ..." />
+  </div>
+
+  <nav class="drawer-nav">
+    <ul>
+      <li><a href="index.html">خانه <i class="bi bi-star-fill"></i></a></li>
+      <li><a href="index2.html">محصولات <i class="bi bi-star-fill"></i></a></li>
+      <li class="has-sub">
+        <a href="#" class="drawer-has-sub">
+          دسته‌بندی‌ها
+          <i class="bi bi-chevron-left toggle-icon"></i>
+        </a>
+        <ul class="drawer-sub">
+          <li><a href="#">لباس</a></li>
+          <li><a href="#">ادکلن</a></li>
+          <li><a href="#">ساعت</a></li>
+          <li><a href="#">اکسسوری</a></li>
+          <li><a href="#">لباس بچه‌گانه</a></li>
+          <li><a href="#">پر فروش‌ها</a></li>
+        </ul>
+      </li>
+      <li><a href="#">تخفیف‌ها</a></li>
+      <li><a href="#">تماس</a></li>
+    </ul>
+  </nav>
+
+  <div class="drawer-actions">
+    <button class="favorite">مورد علاقه‌ها <i class="bi bi-heart"></i></button>
+    <button class="cart-btn">سبد خرید <i class="bi bi-cart"></i></button>
+  </div>
+</aside>
+
+<!-- NAV -->
+<nav>
+  <button class="hamburger" id="hamburgerBtn" aria-label="باز کردن منو">
+    <i class="bi bi-list"></i>
+  </button>
+
+  <a class="logo" href="#">لوکسو<span>را</span></a>
+
+  <ul class="nav-links">
+    <li><a href="index.html">خانه <i class="bi bi-star-fill"></i></a></li>
+    <li><a href="index2.html">محصولات <i class="bi bi-star-fill"></i></a></li>
+    <li class="has-sub">
+      <a href="#">دسته‌بندی‌ها</a>
+      <ul class="slide-down">
+        <li><a href="#">لباس</a></li>
+        <li><a href="#">ادکلن</a></li>
+        <li><a href="#">ساعت</a></li>
+        <li><a href="#">اکسسوری</a></li>
+        <li><a href="#">لباس بچه‌گانه</a></li>
+        <li><a href="#">پر فروش‌ها</a></li>
+      </ul>
+    </li>
+    <li><a href="#">تخفیف‌ها</a></li>
+    <li><a href="#">تماس</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <div class="search-wrap">
+      <input type="search" placeholder="جستجوی محصول ..." class="search" />
+      <i class="bi bi-search"></i>
+    </div>
+    <button class="favorite">مورد علاقه‌ها <i class="bi bi-heart"></i></button>
+    <button class="cart-btn">سبد خرید <i class="bi bi-cart"></i></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <p class="eyebrow">کلکسیون بهار ۱۴۰۴</p>
+    <h1 class="hero-title">سبک برتر،<br />از هر روز تا هر مناسبت</h1>
+    <p class="hero-sub">محصولاتی برگزیده برای کسانی که به کیفیت اهمیت می‌دهند. طراحی ماندگار، جنس اصل.</p>
+    <div class="hero-ctas">
+      <button class="btn-primary">مشاهده کلکسیون</button>
+      <button class="btn-outline">بیشتر بدانید</button>
+    </div>
+  </div>
+  <div class="hero-img">
+    <div class="hero-img-placeholder">
+      <img src="IMG/shoes.jpg" alt="تصویر محصول" />
+    </div>
+    <div class="hero-badge">
+      <div class="hero-badge-label">تا سقف تخفیف</div>
+      <div class="hero-badge-val">۴۰٪</div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div><strong><i class="bi bi-truck"></i> ارسال رایگان</strong> <span>برای خریدهای بالای ۵۰۰ هزار تومان</span></div>
+  <div><strong><i class="bi bi-arrow-counterclockwise"></i> بازگشت آسان</strong> <span>تا ۷ روز پس از دریافت</span></div>
+  <div><strong><i class="bi bi-lock"></i> پرداخت امن</strong> <span>با درگاه‌های معتبر</span></div>
+  <div><strong><i class="bi bi-telephone"></i> پشتیبانی ۲۴/۷</strong> <span>همیشه در کنار شما</span></div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="categories">
+  <div class="section-header">
+    <h2 class="section-title">دسته‌بندی‌ها</h2>
+    <a class="see-all" href="#">مشاهده همه ←</a>
+  </div>
+  <div class="cat-grid">
+    <div class="cat-card">
+      <img src="IMG/Beige Collage New Collection Fashion Instagram Story.webp" alt="پوشاک زنانه" />
+      <div class="cat-label">
+        <span class="cat-name">پوشاک زنانه</span>
+        <span class="cat-count">248 محصول</span>
+      </div>
+    </div>
+    <div class="cat-card">
+      <img src="IMG/Brown Minimalist Product New Arrival Instagram Story.webp" alt="پوشاک مردانه" />
+      <div class="cat-label">
+        <span class="cat-name">پوشاک مردانه</span>
+        <span class="cat-count">186 محصول</span>
+      </div>
+    </div>
+    <div class="cat-card">
+      <img src="IMG/Your paragraph text.webp" alt="لوازم جانبی" />
+      <div class="cat-label">
+        <span class="cat-name">لوازم جانبی</span>
+        <span class="cat-count">213 محصول</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEARCH & FILTERS -->
+<div class="search-section">
+  <div class="search-box">
+    <span>🔍</span>
+    <input type="text" placeholder="جستجو در محصولات..." />
+  </div>
+  <div class="filter-chips">
+    <button class="chip active">همه</button>
+    <button class="chip">جدیدترین</button>
+    <button class="chip">پرفروش</button>
+    <button class="chip">تخفیف‌دار</button>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="products">
+  <div class="section-header">
+    <h2 class="section-title">محصولات پیشنهادی</h2>
+    <a class="see-all" href="index2.html">مشاهده همه ←</a>
+  </div>
+  <div class="product-grid">
+
+    <div class="product-card">
+      <div class="product-img">
+        <img src="IMG/shirt.jpg" alt="پیراهن کتان بهاره" />
+        <span class="product-badge">جدید</span>
+        <div class="product-actions">
+          <button class="action-btn">افزودن به سبد</button>
+          <button class="action-btn icon">♡</button>
+        </div>
+      </div>
+      <p class="product-brand">آرتمیس</p>
+      <p class="product-name">پیراهن کتان بهاره</p>
+      <div class="product-price">
+        <span class="price-now">۴۸۰,۰۰۰ ت</span>
+        <span class="price-old">۶۰۰,۰۰۰</span>
+      </div>
+      <div class="stars">★★★★☆</div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        <img src="IMG/accessories.jpg" alt="گردنبند" />
+        <div class="product-actions">
+          <button class="action-btn">افزودن به سبد</button>
+          <button class="action-btn icon">♡</button>
+        </div>
+      </div>
+      <p class="product-brand">وودلن</p>
+      <p class="product-name">گردنبند</p>
+      <div class="product-price">
+        <span class="price-now">۱,۲۰۰,۰۰۰ ت</span>
+      </div>
+      <div class="stars">★★★★★</div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        <img src="IMG/watch.jpg" alt="ساعت مینیمال" />
+        <span class="product-badge">%۳۰</span>
+        <div class="product-actions">
+          <button class="action-btn">افزودن به سبد</button>
+          <button class="action-btn icon">♡</button>
+        </div>
+      </div>
+      <p class="product-brand">نوردیک</p>
+      <p class="product-name">ساعت مینیمال اسکاندیناوی <i class="bi bi-star-fill"></i></p>
+      <div class="product-price">
+        <span class="price-now">۸۴۰,۰۰۰ ت</span>
+        <span class="price-old">۱,۲۰۰,۰۰۰</span>
+      </div>
+      <div class="stars">★★★★☆</div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        <img src="IMG/glasses.jpg" alt="ساعت رولکس" />
+        <div class="product-actions">
+          <button class="action-btn">افزودن به سبد</button>
+          <button class="action-btn icon">♡</button>
+        </div>
+      </div>
+      <p class="product-brand">رولکس</p>
+      <p class="product-name">ساعت</p>
+      <div class="product-price">
+        <span class="price-now">۳۶۰,۰۰۰ ت</span>
+      </div>
+      <div class="stars">★★★★★</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BANNER -->
+<div class="banner">
+  <div class="banner-text">
+    <h2 class="banner-title">عضویت در باشگاه مشتریان لوکسورا</h2>
+    <p class="banner-sub">با ثبت‌نام، از تخفیف ۱۵٪ اولین خرید، اطلاع از کلکسیون‌های جدید، و ارسال ویژه بهره‌مند شوید.</p>
+  </div>
+  <button class="btn-gold">همین الان ثبت‌نام کنید <i class="bi bi-arrow-left"></i></button>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a class="logo" href="#">لوکسو<span>را</span></a>
+      <p class="footer-desc">فروشگاهی برای کسانی که سبک زندگی ممتاز را انتخاب می‌کنند.</p>
+    </div>
+    <div class="footer-col">
+      <h4>فروشگاه</h4>
+      <ul>
+        <li><a href="#">محصولات جدید</a></li>
+        <li><a href="#">پرفروش‌ها</a></li>
+        <li><a href="#">تخفیف‌ها</a></li>
+        <li><a href="#">هدیه دادن</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>راهنما</h4>
+      <ul>
+        <li><a href="#">شیوه سفارش</a></li>
+        <li><a href="#">پیگیری سفارش</a></li>
+        <li><a href="#">بازگشت کالا</a></li>
+        <li><a href="#">سوالات متداول</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>تماس</h4>
+      <ul>
+        <li><a href="#">درباره ما</a></li>
+        <li><a href="#">وبلاگ</a></li>
+        <li><a href="#">همکاری</a></li>
+        <li><a href="#">پشتیبانی</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© ۱۴۰۴ لوکسورا — تمامی حقوق محفوظ است</span>
+    <div class="social-links">
+      <a href="#">اینستاگرام <i class="bi bi-instagram"></i></a>
+      <a href="#">تلگرام <i class="bi bi-telegram"></i></a>
+      <a href="#">واتساپ <i class="bi bi-whatsapp"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script src="index.js"></script>
+<script>  alert("برای دبدن باقی صفحات رو المان های ستاره دار کلیک کنید")</script>
+</body>
+</html>

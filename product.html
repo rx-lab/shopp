@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>لوکسورا — ساعت مینیمال اسکاندیناوی</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="product.css" />
+  <script src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+<!-- DRAWER OVERLAY -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<!-- MOBILE DRAWER -->
+<aside class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-header">
+    <a class="logo" href="#">لوکسو<span>را</span></a>
+    <button class="drawer-close" id="drawerClose" aria-label="بستن منو">
+      <i class="bi bi-x-lg"></i>
+    </button>
+  </div>
+  <div class="drawer-search">
+    <i class="bi bi-search"></i>
+    <input type="search" placeholder="جستجوی محصول ..." />
+  </div>
+  <nav class="drawer-nav">
+    <ul>
+      <li><a href="index.html">خانه <i class="bi bi-star-fill"></i></a></li>
+      <li><a href="index2.html">محصولات <i class="bi bi-star-fill"></i></a></li>
+      <li class="has-sub">
+        <a href="#" class="drawer-has-sub">
+          دسته‌بندی‌ها
+          <i class="bi bi-chevron-left toggle-icon"></i>
+        </a>
+        <ul class="drawer-sub">
+          <li><a href="#">لباس</a></li>
+          <li><a href="#">ادکلن</a></li>
+          <li><a href="#">ساعت</a></li>
+          <li><a href="#">اکسسوری</a></li>
+          <li><a href="#">لباس بچه‌گانه</a></li>
+          <li><a href="#">پر فروش‌ها</a></li>
+        </ul>
+      </li>
+      <li><a href="#">تخفیف‌ها</a></li>
+      <li><a href="#">تماس</a></li>
+    </ul>
+  </nav>
+  <div class="drawer-actions">
+    <button class="favorite">مورد علاقه‌ها <i class="bi bi-heart"></i></button>
+    <button class="cart-btn">سبد خرید <i class="bi bi-cart"></i></button>
+  </div>
+</aside>
+
+<!-- NAV -->
+<nav>
+  <button class="hamburger" id="hamburgerBtn" aria-label="باز کردن منو">
+    <i class="bi bi-list"></i>
+  </button>
+  <a class="logo" href="#">لوکسو<span>را</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">خانه <i class="bi bi-star-fill"></i></a></li>
+    <li><a href="index2.html">محصولات <i class="bi bi-star-fill"></i></a></li>
+    <li class="has-sub">
+      <a href="#">دسته‌بندی‌ها</a>
+      <ul class="slide-down">
+        <li><a href="#">لباس</a></li>
+        <li><a href="#">ادکلن</a></li>
+        <li><a href="#">ساعت</a></li>
+        <li><a href="#">اکسسوری</a></li>
+        <li><a href="#">لباس بچه‌گانه</a></li>
+        <li><a href="#">پر فروش‌ها</a></li>
+      </ul>
+    </li>
+    <li><a href="#">تخفیف‌ها</a></li>
+    <li><a href="#">تماس</a></li>
+  </ul>
+  <div class="nav-actions">
+    <div class="search-wrap">
+      <input type="search" placeholder="جستجوی محصول ..." class="search" />
+      <i class="bi bi-search"></i>
+    </div>
+    <button class="favorite">مورد علاقه‌ها <i class="bi bi-heart"></i></button>
+    <button class="cart-btn">سبد خرید <i class="bi bi-cart"></i></button>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb-bar">
+  <a href="index.html">خانه</a>
+  <i class="bi bi-chevron-left"></i>
+  <a href="index2.html">محصولات</a>
+  <i class="bi bi-chevron-left"></i>
+  <a href="#">ساعت</a>
+  <i class="bi bi-chevron-left"></i>
+  <span class="cur">ساعت مینیمال اسکاندیناوی</span>
+</div>
+
+<!-- PRODUCT PAGE -->
+<div class="product-page">
+
+  <!-- GALLERY -->
+  <div class="gallery-side">
+    <div class="main-img" id="main-img">
+      <img src="IMG/watch.jpg" alt="ساعت مینیمال اسکاندیناوی" id="main-img-el" />
+      <span class="main-img-badge">%۳۰ تخفیف</span>
+      <button class="main-img-zoom" title="بزرگ‌نمایی">
+        <i class="bi bi-arrows-angle-expand"></i>
+      </button>
+    </div>
+    <div class="thumb-strip">
+      <div class="thumb active" onclick="switchImg(this,'IMG/watch.jpg')">
+        <img src="IMG/watch.jpg" alt="" />
+      </div>
+      <div class="thumb" onclick="switchImg(this,'IMG/watch2.jpg')">
+        <img src="IMG/watch2.jpg" alt="" />
+        <div class="thumb-placeholder" style="background:linear-gradient(135deg,#d8cfc0,#c0b8a8)"></div>
+      </div>
+      <div class="thumb" onclick="switchImg(this,'IMG/watch3.jpg')">
+        <img src="IMG/watch3.jpg" alt="" />
+        <div class="thumb-placeholder" style="background:linear-gradient(135deg,#c8d0d8,#a8b8c8)"></div>
+      </div>
+      <div class="thumb" onclick="switchImg(this,'IMG/watch4.jpg')">
+        <img src="IMG/watch4.jpg" alt="" />
+        <div class="thumb-placeholder" style="background:linear-gradient(135deg,#d0c8c0,#b8a8a0)"></div>
+      </div>
+      <div class="thumb" onclick="switchImg(this,'IMG/watch5.jpg')">
+        <img src="IMG/watch5.jpg" alt="" />
+        <div class="thumb-placeholder" style="background:linear-gradient(135deg,#c8d8c8,#a8c0a8)"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INFO -->
+  <div class="info-side">
+
+    <div>
+      <div class="info-top">
+        <p class="product-brand-tag">نوردیک</p>
+        <button class="wishlist-btn" id="wishlist-btn" title="افزودن به علاقه‌مندی‌ها">
+          <i class="bi bi-heart"></i>
+        </button>
+      </div>
+      <h1 class="product-title">ساعت مینیمال اسکاندیناوی</h1>
+      <p class="product-sku">مدل: NRD-W241 | موجود در انبار</p>
+    </div>
+
+    <!-- Rating -->
+    <div class="rating-row">
+      <div class="stars">★★★★☆</div>
+      <span class="rating-num">۴.۲</span>
+      <div class="rating-divider"></div>
+      <span class="rating-count">۲۳۱ نظر</span>
+      <div class="rating-divider"></div>
+      <span class="sold-count"><i class="bi bi-bag-check"></i> ۱,۸۴۰ فروش</span>
+    </div>
+
+    <!-- Price -->
+    <div class="price-block">
+      <span class="price-main">۸۴۰,۰۰۰ ت</span>
+      <span class="price-original">۱,۲۰۰,۰۰۰</span>
+      <span class="price-save">۳۶۰,۰۰۰ ت صرفه‌جویی</span>
+    </div>
+
+    <!-- Variants -->
+    <div class="variant-section">
+
+      <div>
+        <div class="variant-label">رنگ بند <strong id="selected-color">مشکی چرم</strong></div>
+        <div class="color-opts">
+          <div class="color-opt active" title="مشکی چرم" onclick="selectColor(this,'مشکی چرم')">
+            <div class="color-opt-inner" style="background:#1a1a18"></div>
+          </div>
+          <div class="color-opt" title="قهوه‌ای روشن" onclick="selectColor(this,'قهوه‌ای روشن')">
+            <div class="color-opt-inner" style="background:#8B6914"></div>
+          </div>
+          <div class="color-opt" title="طوسی" onclick="selectColor(this,'طوسی')">
+            <div class="color-opt-inner" style="background:#7a7a72"></div>
+          </div>
+          <div class="color-opt" title="سفید" onclick="selectColor(this,'سفید')">
+            <div class="color-opt-inner" style="background:#fafaf8;border:1px solid #e2e0da"></div>
+          </div>
+          <div class="color-opt" title="سرمه‌ای" onclick="selectColor(this,'سرمه‌ای')">
+            <div class="color-opt-inner" style="background:#1a2a4a"></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="variant-label">سایز صفحه <strong id="selected-size">۴۰ میلی‌متر</strong></div>
+        <div class="size-opts">
+          <button class="size-opt" onclick="selectSize(this,'۳۶ میلی‌متر')">۳۶mm</button>
+          <button class="size-opt active" onclick="selectSize(this,'۴۰ میلی‌متر')">۴۰mm</button>
+          <button class="size-opt" onclick="selectSize(this,'۴۴ میلی‌متر')">۴۴mm</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="variant-label">جنس بند <strong id="selected-material">چرم اصل</strong></div>
+        <div class="material-opts">
+          <button class="material-opt active" onclick="selectMaterial(this,'چرم اصل')">چرم اصل</button>
+          <button class="material-opt" onclick="selectMaterial(this,'استیل')">استیل</button>
+          <button class="material-opt" onclick="selectMaterial(this,'نایلون')">نایلون</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Purchase row -->
+    <div class="purchase-row">
+      <div class="qty-control">
+        <button class="qty-btn" onclick="changeQty(-1)">−</button>
+        <input class="qty-num" id="qty" type="text" value="۱" readonly />
+        <button class="qty-btn" onclick="changeQty(1)">+</button>
+      </div>
+      <button class="btn-add-cart" onclick="addToCart()">
+        <i class="bi bi-cart-plus"></i> افزودن به سبد
+      </button>
+      <button class="btn-buy-now">خرید سریع</button>
+    </div>
+
+    <!-- Trust badges -->
+    <div class="trust-badges">
+      <div class="trust-badge">
+        <i class="bi bi-truck"></i>
+        <span>ارسال رایگان<br>بالای ۵۰۰ هزار</span>
+      </div>
+      <div class="trust-badge">
+        <i class="bi bi-arrow-counterclockwise"></i>
+        <span>بازگشت ۷ روزه<br>بدون قید و شرط</span>
+      </div>
+      <div class="trust-badge">
+        <i class="bi bi-patch-check"></i>
+        <span>ضمانت اصالت<br>کالا</span>
+      </div>
+    </div>
+
+    <!-- Delivery -->
+    <div class="delivery-row">
+      <div class="delivery-item">
+        <i class="bi bi-geo-alt"></i>
+        <span>ارسال به <strong>تهران</strong> — تحویل فردا با پرداخت امروز</span>
+      </div>
+      <div class="delivery-item">
+        <i class="bi bi-box-seam"></i>
+        <span>بسته‌بندی ویژه هدیه <strong>رایگان</strong> با این محصول</span>
+      </div>
+      <div class="delivery-item">
+        <i class="bi bi-credit-card"></i>
+        <span>پرداخت اقساطی با <strong>کارت‌های عضو شتاب</strong></span>
+      </div>
+    </div>
+
+    <!-- Share -->
+    <div class="share-row">
+      <span>اشتراک‌گذاری:</span>
+      <a href="#"><i class="bi bi-instagram"></i></a>
+      <a href="#"><i class="bi bi-telegram"></i></a>
+      <a href="#"><i class="bi bi-whatsapp"></i></a>
+      <a href="#" class="share-copy"><i class="bi bi-link-45deg"></i> کپی لینک</a>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs-section">
+      <div class="tab-list">
+        <button class="tab-btn active" onclick="switchTab(this,'desc')">توضیحات</button>
+        <button class="tab-btn" onclick="switchTab(this,'specs')">مشخصات فنی</button>
+        <button class="tab-btn" onclick="switchTab(this,'reviews')">نظرات (۲۳۱)</button>
+      </div>
+
+      <div class="tab-panel active" id="tab-desc">
+        <p class="desc-text">ساعت مینیمال اسکاندیناوی نوردیک، الهام گرفته از طراحی خلوت شمال اروپاست؛ جایی که هر خط معنا دارد و هیچ‌چیز اضافه نیست. صفحه سفید مات با ایندکس‌های طلایی ظریف، در کنار بند چرم دست‌دوز ایتالیایی، ترکیبی می‌سازد که هم برای جلسه رسمی مناسب است و هم برای پیاده‌روی عصرگاهی.</p>
+        <ul class="desc-highlights">
+          <li>موور ژاپنی Miyota 8215 با دقت ±۱۰ ثانیه در روز</li>
+          <li>شیشه سفیر ضدخش با پوشش ضد انعکاس دوطرفه</li>
+          <li>بند چرم گوساله ایتالیایی دست‌دوز، قابل تعویض ۲۰ میلی‌متر</li>
+          <li>مقاومت در برابر آب تا ۵۰ متر (ATM5)</li>
+          <li>قفل باترفلای استیل ضدزنگ</li>
+          <li>همراه با جعبه چوبی اختصاصی و سند اصالت</li>
+        </ul>
+      </div>
+
+      <div class="tab-panel" id="tab-specs">
+        <table class="specs-table">
+          <tr><td>موور</td><td>Miyota 8215 — اتوماتیک</td></tr>
+          <tr><td>قطر صفحه</td><td>۴۰ میلی‌متر (موجود در ۳۶ و ۴۴mm)</td></tr>
+          <tr><td>ضخامت</td><td>۱۰.۸ میلی‌متر</td></tr>
+          <tr><td>شیشه</td><td>سفیر، پوشش AR دوطرفه</td></tr>
+          <tr><td>مقاومت آب</td><td>5 ATM (50 متر)</td></tr>
+          <tr><td>جنس قاب</td><td>استیل ضدزنگ 316L</td></tr>
+          <tr><td>جنس بند</td><td>چرم گوساله ایتالیایی / استیل / نایلون بالیستیک</td></tr>
+          <tr><td>عرض بند</td><td>۲۰ میلی‌متر</td></tr>
+          <tr><td>قفل</td><td>باترفلای استیل</td></tr>
+          <tr><td>وزن (بدون بند)</td><td>۶۸ گرم</td></tr>
+          <tr><td>ذخیره کوک</td><td>۴۲ ساعت</td></tr>
+          <tr><td>رنگ صفحه</td><td>سفید مات / مشکی مات</td></tr>
+          <tr><td>کشور تولید</td><td>ژاپن — مونتاژ دانمارک</td></tr>
+          <tr><td>گارانتی</td><td>۲ سال — سرویس مجانی سال اول</td></tr>
+        </table>
+      </div>
+
+      <div class="tab-panel" id="tab-reviews">
+        <div class="reviews-summary">
+          <div class="big-rating">
+            <div class="big-num">۴.۲</div>
+            <div>
+              <div class="big-stars">★★★★☆</div>
+              <div class="big-total">از ۲۳۱ نظر</div>
+            </div>
+          </div>
+          <div class="rating-bars">
+            <div class="rating-bar-row"><span>۵ ★</span><div class="bar-track"><div class="bar-fill" style="width:62%"></div></div><span class="bar-pct">۶۲٪</span></div>
+            <div class="rating-bar-row"><span>۴ ★</span><div class="bar-track"><div class="bar-fill" style="width:21%"></div></div><span class="bar-pct">۲۱٪</span></div>
+            <div class="rating-bar-row"><span>۳ ★</span><div class="bar-track"><div class="bar-fill" style="width:9%"></div></div><span class="bar-pct">۹٪</span></div>
+            <div class="rating-bar-row"><span>۲ ★</span><div class="bar-track"><div class="bar-fill" style="width:5%"></div></div><span class="bar-pct">۵٪</span></div>
+            <div class="rating-bar-row"><span>۱ ★</span><div class="bar-track"><div class="bar-fill" style="width:3%"></div></div><span class="bar-pct">۳٪</span></div>
+          </div>
+        </div>
+        <div class="review-list">
+          <div class="review-card">
+            <div class="review-header">
+              <div><p class="reviewer-name">علی م.</p><span class="review-badge verified">خریدار تأیید شده</span></div>
+              <span class="review-date">۱۲ اردیبهشت ۱۴۰۴</span>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-title">دقیقاً همان چیزی که در عکس دیدم</p>
+            <p class="review-body">بند چرمش واقعاً کیفیته. بعد از یک ماه استفاده روزانه هیچ خش یا تغییر رنگی نداشته. صفحه سفیدش زیر نور آفتاب خوندنش راحته. ارزش قیمتش رو داره.</p>
+            <p class="review-helpful">آیا این نظر مفید بود؟ <button>بله (۱۴)</button><button>خیر</button></p>
+          </div>
+          <div class="review-card">
+            <div class="review-header">
+              <div><p class="reviewer-name">سارا ک.</p><span class="review-badge verified">خریدار تأیید شده</span></div>
+              <span class="review-date">۳ اردیبهشت ۱۴۰۴</span>
+            </div>
+            <div class="review-stars">★★★★☆</div>
+            <p class="review-title">طراحی عالی، تحویل کمی دیر</p>
+            <p class="review-body">ساعت از نظر ظاهری بینقصه. قوطی چوبی‌ای که توش میاد هم خودش هدیه‌ایه. فقط ارسال دو روز بیشتر از موعد طول کشید.</p>
+            <p class="review-helpful">آیا این نظر مفید بود؟ <button>بله (۷)</button><button>خیر</button></p>
+          </div>
+          <div class="review-card">
+            <div class="review-header">
+              <div><p class="reviewer-name">رضا ت.</p><span class="review-badge">خریدار</span></div>
+              <span class="review-date">۲۵ فروردین ۱۴۰۴</span>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-title">بهترین ساعتی که داشتم</p>
+            <p class="review-body">سومین ساعتی‌ام از نوردیکه و هر بار راضی‌ترم. موور اتوماتیکش دقیقه. هر روز می‌پوشمش.</p>
+            <p class="review-helpful">آیا این نظر مفید بود؟ <button>بله (۲۲)</button><button>خیر</button></p>
+          </div>
+        </div>
+        <div class="review-actions">
+          <button class="btn-write-review">نظر بگذارید</button>
+          <button class="btn-all-reviews">مشاهده همه نظرات</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- RELATED -->
+<section class="related-section">
+  <div class="section-header">
+    <h2 class="section-title">محصولات دیگر</h2>
+    <a class="see-all" href="#">مشاهده همه ←</a>
+  </div>
+  <div class="related-grid">
+
+    <div class="product-card">
+      <div class="product-img">
+        <img src="IMG/accessorie2.jpg" alt="دستبند" />
+        <span class="product-badge">جدید</span>
+        <div class="product-actions">
+          <button class="action-btn">افزودن به سبد</button>
+          <button class="action-btn icon"><i class="bi bi-heart"></i></button>
+        </div>
+      </div>
+      <p class="product-brand">نوردیک</p>
+      <p class="product-name">دستبند</p>
+      <div class="product-price"><span class="price-now">۱,۴۵۰,۰۰۰ ت</span></div>
+      <div class="stars">★★★★★</div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        <img src="IMG/bag.jpg" alt="کیف چرم" />
+        <span class="product-badge" style="background:#c0392b">%۱۵</span>
+        <div class="product-actions">
+          <button class="action-btn">افزودن به سبد</button>
+          <button class="action-btn icon"><i class="bi bi-heart"></i></button>
+        </div>
+      </div>
+      <p class="product-brand">وودلن</p>
+      <p class="product-name">کیف چرم</p>
+      <div class="product-price">
+        <span class="price-now">۹۸۰,۰۰۰ ت</span>
+        <span class="price-old">۱,۱۵۰,۰۰۰</span>
+      </div>
+      <div class="stars">★★★★☆</div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        <img src="IMG/glasses.jpg" alt="عینک" />
+        <div class="product-actions">
+          <button class="action-btn">افزودن به سبد</button>
+          <button class="action-btn icon"><i class="bi bi-heart"></i></button>
+        </div>
+      </div>
+      <p class="product-brand">رولکس</p>
+      <p class="product-name">عینک</p>
+      <div class="product-price"><span class="price-now">۳۶۰,۰۰۰ ت</span></div>
+      <div class="stars">★★★★★</div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        <img src="IMG/perfume.jpg" alt="ادکلن" />
+        <span class="product-badge">جدید</span>
+        <div class="product-actions">
+          <button class="action-btn">افزودن به سبد</button>
+          <button class="action-btn icon"><i class="bi bi-heart"></i></button>
+        </div>
+      </div>
+      <p class="product-brand">نوردیک</p>
+      <p class="product-name">ادکلن</p>
+      <div class="product-price"><span class="price-now">۱,۱۰۰,۰۰۰ ت</span></div>
+      <div class="stars">★★★★☆</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a class="logo" href="#">لوکسو<span>را</span></a>
+      <p class="footer-desc">فروشگاهی برای کسانی که سبک زندگی ممتاز را انتخاب می‌کنند.</p>
+    </div>
+    <div class="footer-col"><h4>فروشگاه</h4><ul>
+      <li><a href="#">محصولات جدید</a></li>
+      <li><a href="#">پرفروش‌ها</a></li>
+      <li><a href="#">تخفیف‌ها</a></li>
+      <li><a href="#">هدیه دادن</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>راهنما</h4><ul>
+      <li><a href="#">شیوه سفارش</a></li>
+      <li><a href="#">پیگیری سفارش</a></li>
+      <li><a href="#">بازگشت کالا</a></li>
+      <li><a href="#">سوالات متداول</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>تماس</h4><ul>
+      <li><a href="#">درباره ما</a></li>
+      <li><a href="#">وبلاگ</a></li>
+      <li><a href="#">همکاری</a></li>
+      <li><a href="#">پشتیبانی</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© ۱۴۰۴ لوکسورا — تمامی حقوق محفوظ است</span>
+    <div class="social-links">
+      <a href="#">اینستاگرام <i class="bi bi-instagram"></i></a>
+      <a href="#">تلگرام <i class="bi bi-telegram"></i></a>
+      <a href="#">واتساپ <i class="bi bi-whatsapp"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta">
+  <div>
+    <div class="sticky-cta-price">۸۴۰,۰۰۰ ت</div>
+    <div class="sticky-cta-old">۱,۲۰۰,۰۰۰</div>
+  </div>
+  <button class="btn-add-cart sticky-add" onclick="addToCart()">
+    <i class="bi bi-cart-plus"></i> افزودن به سبد
+  </button>
+</div>
+
+<script src="index.js"></script>
+<script src="product.js"></script>
+</body>
+</html>
